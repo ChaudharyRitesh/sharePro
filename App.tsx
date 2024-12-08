@@ -1,9 +1,13 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, Button} from 'react-native';
-import {useTestStore} from './src/store/teststore';
+import {useCommonStore} from './src/store/common_store';
+import {Colors} from './src/utils/Constants';
+import {Icon} from './src/components/global/Icon';
 
 const App = () => {
-  const {count, increment, decrement} = useTestStore();
+  const {theme, setTheme} = useCommonStore();
+
   return (
     <View
       style={{
@@ -12,10 +16,16 @@ const App = () => {
         alignItems: 'center',
         flex: 1,
         padding: 20,
+        backgroundColor: theme === 'light' ? 'white' : Colors.text,
       }}>
-      <Text>{count}</Text>
-      <Button title="Increment" onPress={increment} />
-      <Button title="Decrement" onPress={decrement} />
+      <Text>Hello</Text>
+
+      <Icon name="home" size={20} color="red" iconFamily="Ionicons" />
+
+      <Button
+        title="Toggle Theme"
+        onPress={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+      />
     </View>
   );
 };
