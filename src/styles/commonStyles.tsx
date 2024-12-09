@@ -15,9 +15,9 @@ export const commonStyles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   img: {
-    width: screenWidth * 0.5,
-    height: screenWidth * 0.5,
-    resizeMode: 'contain',
+    width: screenWidth * 0.4,
+    height: screenWidth * 0.4,
+    resizeMode: 'cover',
   },
   flexRowBetween: {
     flexDirection: 'row',

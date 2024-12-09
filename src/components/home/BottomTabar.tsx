@@ -5,7 +5,7 @@ import {Icon} from '../global/Icon';
 import {navigate} from '../../utils/NavigationUtil';
 
 const BottomTabar = () => {
-  const [visible, setVisible] = useState<boolean>(false);
+  const [, setVisible] = useState<boolean>(false);
   return (
     <View style={bottomTabStyles.container}>
       <TouchableOpacity onPress={() => navigate('ReceivedFileScreen')}>

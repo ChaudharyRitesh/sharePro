@@ -4,7 +4,9 @@ import {persist, createJSONStorage} from 'zustand/middleware';
 
 interface CommonStore {
   theme: 'light' | 'dark';
+  openModal: boolean;
   setTheme: (theme: 'light' | 'dark') => void;
+  setOpenModal: (openModal: boolean) => void;
 }
 
 export const useCommonStore = create<CommonStore>()(
@@ -12,6 +14,8 @@ export const useCommonStore = create<CommonStore>()(
     set => ({
       theme: 'light',
       setTheme: (theme: 'light' | 'dark') => set({theme}),
+      openModal: false,
+      setOpenModal: (openModal: boolean) => set({openModal}),
     }),
     {
       name: 'common-storage',
