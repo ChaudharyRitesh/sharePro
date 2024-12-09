@@ -10,7 +10,11 @@ interface IconProps {
   name: string;
   size: number;
   color?: string;
-  iconFamily?: 'EvilIcons' | 'Ionicons' | 'MaterialIcons';
+  iconFamily?:
+    | 'EvilIcons'
+    | 'Ionicons'
+    | 'MaterialIcons'
+    | 'MaterialCommunityIcons';
 }
 
 export const Icon: React.FC<IconProps> = ({name, size, color, iconFamily}) => {
